@@ -1,7 +1,9 @@
 #########################
 # Get current AWS Region
 #########################
-data "aws_region" "current" {}
+data "aws_region" "current" {
+  current = "true"
+}
 
 # IAM role/policies
 ####################
