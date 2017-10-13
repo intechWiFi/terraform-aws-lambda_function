@@ -2,7 +2,7 @@
 Create a role that the lambda function assumes when run
 --------------------------------------------------------------------*/
 resource "aws_iam_role" "assume" {
-  name = "${var.function_name}-assume"
+  name = "${var.id}-assume"
   path = "/"
 
   assume_role_policy = "${data.aws_iam_policy_document.assume.json}"
@@ -32,7 +32,7 @@ resource "aws_iam_role_policy_attachment" "logs" {
 }
 
 resource "aws_iam_policy" "logs" {
-  name   = "${var.function_name}-logs"
+  name   = "${var.id}-logs"
   policy = "${data.aws_iam_policy_document.logs.json}"
 }
 

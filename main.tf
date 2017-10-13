@@ -1,10 +1,14 @@
-####################
+#########################
+# Get current AWS Region
+#########################
+data "aws_region" "current" {}
+
 # IAM role/policies
 ####################
 module "iam" {
   source = "./modules/iam"
 
-  function_name = "${var.function_name}"
+  id = "${var.function_name}-${data.aws_region.current.name}"
 }
 
 ##################

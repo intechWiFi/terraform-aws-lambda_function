@@ -1,4 +1,4 @@
-variable "function_name" {
-  description = "The name of the lambda function to create"
+variable "id" {
+  description = "An id used to create iam roles"
   type        = "string"
 }
