@@ -18,14 +18,18 @@ variable "runtime" {
   type        = "string"
 }
 
+variable "security_group_ids" {
+  description = "A list of security group IDs associated with the Lambda function"
+  type        = "list"
+}
+
+variable "subnet_ids" {
+  description = "A list of subnet IDs associated with the Lambda function"
+  type        = "list"
+}
+
 variable "tags" {
   default     = {}
   description = "A mapping of tags to assign to the object"
-  type        = "map"
-}
-
-variable "vpc_config" {
-  default     = {}
-  description = "Provide this to allow your function to access your VPC."
   type        = "map"
 }
